@@ -1,5 +1,5 @@
 # First stage: Build the TypeScript code
-FROM node:22-alpine3.18 as builder
+FROM node:22-bullseye as builder
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Second stage: Run the compiled JavaScript code
-FROM node:22-alpine3.18
+FROM node:22-bullseye
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
