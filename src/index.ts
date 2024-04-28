@@ -15,6 +15,11 @@ app.get("/hello-world", (req: Request, res: Response) => {
   res.send("Hello, World!");
 });
 
+app.get("/current-time", (req: Request, res: Response) => {
+  const currentTime = new Date().toISOString();
+  res.send(`Current time: ${currentTime}`);
+});
+
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
 });
